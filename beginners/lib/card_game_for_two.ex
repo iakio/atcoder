@@ -18,13 +18,12 @@ defmodule CardGameForTwo do
 
   """
   def solve(ls) do
-    [a, b] = Enum.sort(ls, :desc)
-      |> each_some(0, 0)
-    a - b
+    Enum.sort(ls, :desc)
+      |> each_some(0)
   end
 
-  def each_some([], a, b), do: [a, b]
-  def each_some([ax], a, b), do: [a + ax, b]
-  def each_some([ax, bx | tail], a, b), do: each_some(tail, a + ax, b + bx)
+  def each_some([], some), do: some
+  def each_some([ax], some), do: ax + some
+  def each_some([ax, bx | tail], some), do: each_some(tail, some + ax - bx)
 
 end

@@ -6,6 +6,7 @@ defmodule BeginnersTest do
   doctest Coins
   doctest SomeSomes
   doctest CardGameForTwo
+  doctest KagamiMochi
 
   test "greets the world" do
     assert Beginners.hello() == :world
